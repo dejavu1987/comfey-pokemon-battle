@@ -1,4 +1,15 @@
-# Comfey Demo
+# Comfey Pokemon Battle Demo
+A simple game to showcase state management using [Comfey](https://npm.io/package/comfey)
+For details on rules go to rules section below, 
+
+TLDR; in short, you need `Motivation` and `HP` to do a battle, both of which decreases as you battle.
+
+Every 10 sec a `gift box` appears, which contains random amount of `Berries` and `Potions` which restore `Motivation` and `HP` respectively.
+
+Every game lasts 40 sec.
+
+## DEMO URL
+https://comfey-pokemon-battle.anilmaharjan.com.np
 
 ## Rules
 
