@@ -1,0 +1,199 @@
+body {
+  font-size: 15px;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  margin: 0;
+}
+
+body.over {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.bg {
+  /* The image used */
+  background-image: url(https://dw9to29mmj727.cloudfront.net/promo/2016/5250-SeriesHeaders_POK_2000x800v2.jpg);
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#app {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  margin: 10px auto;
+  border: 7px solid #e9bf36;
+  border-style: outset;
+  background: linear-gradient(95deg, #f7d050, #e9bf36);
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
+  min-height: 90vh;
+}
+
+@media (max-width: 640px) {
+  #app {
+    height: 90vh;
+    width: 80vw;
+    margin: 5vh 10vw;
+  }
+  .lcd {
+    height: 45vh;
+  }
+}
+
+.lcd {
+  border: 6px solid #ccc;
+  color: #222;
+  border-style: inset;
+  padding: 10px;
+  text-align: center;
+  min-height: 50vh;
+  background: #aaa;
+}
+
+.lcd div {
+  text-align: left;
+}
+
+.lcd img {
+  width: 200px;
+  max-width: 100%;
+  max-height: 120px;
+  image-rendering: pixelated;
+  border: 1px solid #888;
+  object-fit: cover;
+}
+
+button img {
+  max-width: 28px;
+  margin-bottom: 10px;
+}
+
+#app div {
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.bar {
+  border: 1px solid;
+  height: 4px;
+}
+
+.bar-fill {
+  background: #555;
+  height: 4px;
+  width: 0px;
+  margin: 0 !important;
+}
+
+.bar.hp .bar-fill {
+  background: #c00;
+}
+.bar.motivation .bar-fill {
+  background: #00c;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: stretch;
+}
+
+.buttons > div {
+  width: calc(50% - 10px);
+  margin-bottom: 5px;
+  height: 90px;
+  background: #ccc;
+  border: 3px solid #ccc;
+  border-style: outset;
+  border-radius: 25px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 5px;
+  cursor: pointer;
+  background: #017943;
+  border: 3px solid #017943;
+  border-style: outset;
+  border-radius: 25px;
+  width: 100%;
+  height: 80px;
+  outline: none;
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  color: white;
+  box-sizing: border-box;
+}
+
+#battle {
+  background: #c43129;
+  border-color: #c43129;
+}
+
+#restart {
+  border-color: gray;
+  border-radius: 0;
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    #9a4518 0 20%,
+    #c4c3c8 20% 30%,
+    #000000 30% 100%
+  );
+  width: 50%;
+  max-width: 280px;
+  top: 3%;
+  right: 5%;
+  padding: 3px;
+  height: 57px;
+  border-style: solid;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px black;
+}
+
+#restart::before {
+  content: " ";
+  width: 16px;
+  height: 25px;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -12px;
+  background: gray;
+}
+
+#clock {
+  background: #c4a129;
+  border-color: #c4a129;
+}
+/* These css rules are neede for data-bind hidden/visible to work */
+[data-bind-visible] {
+  display: none;
+}
+[data-bind-visible].visible {
+  display: block;
+}
+
+[data-bind-hidden] {
+  display: block;
+}
+[data-bind-hidden].hidden {
+  display: none;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comfey Demo</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0  maximum-scale=1.0, 
+    user-scalable=0'"
+    />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div id="app">
+      <div class="lcd">
+        <div class="over" data-bind-visible="gameStatus::over">
+          <h2>Game Over</h2>
+          <hr />
+          <br />
+          <div>XP: <span data-bind="cp">x</span></div>
+          <div>Hi-score: <span data-bind="highScore">x</span></div>
+          <div>
+            <button id="restart">Change Batteries</button>
+          </div>
+        </div>
+        <div class="stage" data-bind-visible="gameStatus::active">
+          <div>Battery: <span data-bind="battery"></span></div>
+          <img src="https://cdn.bulbagarden.net/upload/e/ea/764MS8.png" />
+          <div><h3>Comfey</h3></div>
+          <div>XP: <span data-bind="cp">x</span></div>
+          <div>HP: <span data-bind="hp">x</span><span>%</span></div>
+          <div class="bar hp">
+            <div
+              class="bar-fill"
+              data-bind-attr="hp::style::width:$%;background:hsl($,100%,30%)"
+            ></div>
+          </div>
+          <div>Motivation: <span data-bind="motivation">x</span>%</div>
+          <div class="bar motivation">
+            <div
+              class="bar-fill"
+              data-bind-attr="motivation::style::width:$%"
+            ></div>
+          </div>
+        </div>
+        <div class="booting" data-bind-visible="gameStatus::booting">
+          <div>Booting..</div>
+          <div class="bar motivation">
+            <div
+              class="bar-fill"
+              data-bind-attr="booting::style::width:$%"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div data-bind-visible="gameStatus::active">
+        <div class="buttons">
+          <div>
+            <button id="feed" data-bind-visible="rasp">
+              <img src="/raspberry.svg" /> x<span data-bind="rasp"></span>
+            </button>
+          </div>
+          <div>
+            <button id="heal" data-bind-visible="potion">
+              <img
+                src="https://vignette.wikia.nocookie.net/pokemongohelp/images/6/64/Potion-Pokemon-Go.png/revision/latest?cb=20160923062830"
+                alt=""
+              />
+              x<span data-bind="potion"></span>
+            </button>
+          </div>
+          <div>
+            <button id="gift" data-bind-hidden="clock">
+              <img
+                src="https://storage.googleapis.com/nianticweb-media/pokemongo/helper/gift.png"
+                alt="gift"
+              /></button
+            ><button id="clock" data-bind-visible="clock">
+              <span data-bind="clock"></span>
+            </button>
+          </div>
+          <div>
+            <button id="battle" data-bind-visible="hp">
+              <img src="/battle.svg" alt="battle" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
