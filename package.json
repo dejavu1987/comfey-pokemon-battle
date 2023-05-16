@@ -11,8 +11,8 @@
     "comfey": "1.7.2"
   },
   "devDependencies": {
-    "@babel/core": "7.2.0",
-    "parcel-bundler": "^1.6.1"
+    "@babel/core": "7.21.8",
+    "parcel-bundler": "^1.12.5"
   },
   "keywords": []
 }
